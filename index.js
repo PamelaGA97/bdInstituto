@@ -6,6 +6,7 @@ const docenteRoutes = require('./routes/docentes');
 const estudianteRoutes = require('./routes/estudiantes');
 const materiaRoutes = require('./routes/materias');
 const facultadRoutes = require('./routes/facultades');
+const cursoRoutes = require('./routes/cursos');
 
 const app = express();
 const PORT = 3000;
@@ -18,6 +19,7 @@ app.use('/api/docentes', docenteRoutes);
 app.use('/api/estudiantes', estudianteRoutes);
 app.use('/api/materias', materiaRoutes);
 app.use('/api/facultades', facultadRoutes);
+app.use('/api/cursos', cursoRoutes);
 
 // Iniciar el servidor
 app.listen(PORT, () => {

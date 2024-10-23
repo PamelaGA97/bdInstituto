@@ -3,7 +3,7 @@ const db = require('../config/db');
 
 const Estudiante = {
   crearEstudiante: (data, callback) => {
-    const query = 'INSERT INTO estudiante (idEstudiante, nombreEstudiante, apellidoPaternoEstudiante, apellidoMaternoEstudiante ciEstudiante, celularEstudiante, anhoPromocion, colegio, carreraInteres) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    const query = 'INSERT INTO estudiante (idEstudiante, nombreEstudiante, apellidoPaternoEstudiante, apellidoMaternoEstudiante ciEstudiante, celularEstudiante, anhoPromocion, colegio, carreraInteres) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
     db.query(query, [data.idEstudiante, data.nombreEstudiante, data.apellidoPaternoEstudiante, data.apellidoMaternoEstudiante, data.ciEstudiante, data.celularEstudiante, data.anhoPromocion, data.colegio, data.carreraInteres], (err, results) => {
       if (err) {
         console.error('Error al crear estudiante:', err);
