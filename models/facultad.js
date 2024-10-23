@@ -3,8 +3,8 @@ const db = require('../config/db');
 
 const Facultad = {
   crearFacultad: (data, callback) => {
-    const query = 'INSERT INTO facultad (idFacultad, nombreFacultad, modalidadIngreso, carrera) VALUES (?, ?, ?, ?)';
-    db.query(query, [data.idFacultad, data.nombreFacultad, data.modalidadIngreso, data.carrera], (err, results) => {
+    const query = 'INSERT INTO facultad (idFacultad, nombreFacultad, idCarrera) VALUES (?, ?, ?)';
+    db.query(query, [data.idFacultad, data.nombreFacultad, data.idCarrera], (err, results) => {
       if (err) {
         console.error('Error al crear facultad:', err);
         return callback(err);
