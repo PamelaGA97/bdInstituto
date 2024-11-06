@@ -1,7 +1,6 @@
 // index.js
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('./config/db'); // Asegúrate de que la conexión esté activa
 const docenteRoutes = require('./routes/docentes');
 const estudianteRoutes = require('./routes/estudiantes');
 const materiaRoutes = require('./routes/materias');
@@ -10,6 +9,7 @@ const cursoRoutes = require('./routes/cursos');
 const secretariaRoutes = require('./routes/secretarias');
 const carreraRoutes = require('./routes/carreras');
 const inscripcionRoutes = require('./routes/inscripciones');
+const disponibilidadRoutes = require('./routes/disponibilidadRoutes');
 
 const app = express();
 const PORT = 3000;
@@ -26,6 +26,7 @@ app.use('/api/cursos', cursoRoutes);
 app.use('/api/secretarias', secretariaRoutes);
 app.use('/api/carreras', carreraRoutes); 
 app.use('/api/inscripciones', inscripcionRoutes);
+app.use('/api/disponibilidades', disponibilidadRoutes);
 
 // Iniciar el servidor
 app.listen(PORT, () => {
