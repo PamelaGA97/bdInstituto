@@ -10,6 +10,7 @@ const secretariaRoutes = require('./routes/secretarias');
 const carreraRoutes = require('./routes/carreras');
 const inscripcionRoutes = require('./routes/inscripciones');
 const disponibilidadRoutes = require('./routes/disponibilidadRoutes');
+const usuarioRoutes = require('./routes/usuarioRoutes');
 
 const app = express();
 const PORT = 3000;
@@ -27,6 +28,7 @@ app.use('/api/secretarias', secretariaRoutes);
 app.use('/api/carreras', carreraRoutes); 
 app.use('/api/inscripciones', inscripcionRoutes);
 app.use('/api/disponibilidades', disponibilidadRoutes);
+app.use('/api/usuarios', usuarioRoutes);
 
 // Iniciar el servidor
 app.listen(PORT, () => {
