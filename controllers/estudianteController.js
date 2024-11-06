@@ -1,5 +1,5 @@
 // controllers/EstudianteController.js
-const Estudiante = require('../models/estudiante');
+const Estudiante = require('../models/Estudiante');
 
 exports.crearEstudiante = (req, res) => {
   const nuevoEstudiante = req.body;
@@ -25,20 +25,6 @@ exports.obtenerEstudiantePorId = (req, res) => {
   const { idEstudiante } = req.params;
   
   Estudiante.obtenerEstudiantePorId(idEstudiante, (err, estudiante) => {
-    if (err) {
-      return res.status(500).json({ mensaje: 'Error al obtener estudiante' });
-    }
-    if (!estudiante) {
-      return res.status(404).json({ mensaje: 'Estudiante no encontrado' });
-    }
-    res.json(estudiante);
-  });
-};
-
-exports.obtenerEstudiantePorCi = (req, res) => {
-  const { ciEstudiante } = req.params;
-  
-  Estudiante.obtenerEstudiantePorId(ciEstudiante, (err, estudiante) => {
     if (err) {
       return res.status(500).json({ mensaje: 'Error al obtener estudiante' });
     }
